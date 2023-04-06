@@ -4,7 +4,6 @@ import random
 
 from sklearn.datasets import load_breast_cancer, load_diabetes
 
-
 class Perceptron:
     def __init__(self, inputs, rate):
         #empty input vector
@@ -75,12 +74,12 @@ def load_diabetes_regression():
     return x, y
 
 if __name__ == '__main__':
-    x, y = load_cancer_binary_class()
-    #x, y = load_diabetes_regression()
-    no_vars = len(x[0])
+    x, y = load_cancer_binary_class() #binary classification data
+    #x, y = load_diabetes_regression() #regression data
+    no_vars = len(x[0]) 
 
-    clf = Perceptron(no_vars, rate=0.1)
-    #clf = PerceptronRegression(no_vars, rate = 0.01)
+    clf = Perceptron(no_vars, rate=0.1) #uncomment for binary classification
+    #clf = PerceptronRegression(no_vars, rate = 0.01) #uncomment for regression perceptron
 
     trainhist = {}
 
